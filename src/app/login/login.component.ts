@@ -11,6 +11,14 @@ import { routerTransition } from '../router.animations';
 export class LoginComponent implements OnInit {
 
     constructor(public router: Router) {
+
+        var val = localStorage.getItem('isLoggedin');
+
+        if (val && val == 'true') {
+            this.router.navigate(['/']);
+        }
+
+        
     }
 
     ngOnInit() {
